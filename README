@@ -1,0 +1,25 @@
+sortable_pictures
+
+You can manage & sort pictures
+
+== Model
+ class model < ActiveRecord::Base
+   has_many :sortable_pictures, :dependent => :destroy, :order => 'position', :as => :picturable
+   has_many :pictures, :through => :sortable_pictures, :readonly => true, :order => 'sortable_pictures.position'
+ end
+
+== Controller
+ def create
+   @model = Model.find params[:id]
+   picture = Picture.new params[:picture]
+   if picture.save
+     sortable_pictures = picture.sortable_pictures.new
+     sortable_picture.picturable = @model
+     sortable_picture.save
+   end
+ end
+
+== View
+ <% @model.pictures.each do |picture| %>
+   <%= image_tag(picture.public_filename :thumb) %>
+ <% end %>
