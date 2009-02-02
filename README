@@ -23,3 +23,21 @@ You can manage & sort pictures
  <% @model.pictures.each do |picture| %>
    <%= image_tag(picture.public_filename :thumb) %>
  <% end %>
+
+== initializers
+  in RAILS_ROOT + config/initializers/sortable_pictures.rb
+
+  module SortablePictures
+    def self.options
+      { :storage => :file_system,
+      :file_system_path => 'public/images/products_pictures',
+      :content_type => 'image',
+      :thumbnails => { 
+        :big => '500x500', 
+        :normal => '200x200', 
+        :small => '100x100', 
+        :thumb => '50x50'
+        }
+      }
+    end
+  end
