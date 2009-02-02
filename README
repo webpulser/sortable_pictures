@@ -30,7 +30,7 @@ You can manage & sort pictures
   module SortablePictures
     def self.options
       { :storage => :file_system,
-      :file_system_path => 'public/images/products_pictures',
+      :file_system_path => 'public/images/sortable_pictures',
       :content_type => 'image',
       :thumbnails => { 
         :big => '500x500', 
