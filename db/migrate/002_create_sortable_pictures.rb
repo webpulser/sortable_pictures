@@ -1,8 +1,8 @@
 class CreateSortablePictures < ActiveRecord::Migration
   def self.up
     create_table :sortable_pictures do |t|
-      t.belongs_to :picture, :object
-      t.string :object_type
+      t.belongs_to :picture
+      t.belongs_to :picturable, :polymorphic => true
       t.integer :position
     end
   end
