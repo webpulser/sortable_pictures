@@ -1,1 +1,1 @@
-require 'sortables_pictures'
+require 'sortable_pictures'

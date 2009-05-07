@@ -1,13 +1,13 @@
-#SortablesPictures
+#SortablePictures
 module Webpulser
-  module SortablesPictures #:nodoc:
+  module SortablePictures #:nodoc:
 
     def self.included(base)
       base.extend ClassMethods  
     end
 
     module ClassMethods
-      def sortables_pictures
+      def sortable_pictures
         has_many :sortable_pictures, :dependent => :destroy, :order => 'position', :as => :picturable
         has_many :pictures, :through => :sortable_pictures, :readonly => true, :order => 'sortable_pictures.position'
       end
@@ -16,4 +16,4 @@ module Webpulser
   end
 end
 
-ActiveRecord::Base.send(:include, Webpulser::SortablesPictures)
+ActiveRecord::Base.send(:include, Webpulser::SortablePictures)
