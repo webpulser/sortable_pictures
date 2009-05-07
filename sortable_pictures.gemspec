@@ -10,7 +10,6 @@ Gem::Specification.new do |s|
   s.authors  = ["Cyril LEPAGNOT"] 
   s.files    = ["LICENSE", 
 		"README",
-		"Rakefile", 
 		"sortable_pictures.gemspec", 
                 "init.rb",
 		"lib/sortable_pictures.rb", 
