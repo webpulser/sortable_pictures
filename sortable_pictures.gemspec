@@ -21,7 +21,6 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/qtousart/sortable_pictures"
   s.rdoc_options = ["--inline-source", "--charset=UTF-8"]
   s.rubyforge_project = %q{sortable_pictures}
-  s.rubygems_version = %q{1.3.0}
   s.summary = %q{Polymorphic and sortables pictures Rails plugin.}
 
   if s.respond_to? :specification_version then
