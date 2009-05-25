@@ -1,0 +1,57 @@
+h1. Sortable pictures
+
+You can manage & sort pictures
+
+h1. How to use ?
+
+h2. Model
+
+<pre>
+<code>
+ class Model < ActiveRecord::Base
+   sortable_pictures
+ end
+</code>
+</pre>
+
+h2. Controller
+
+<pre>
+<code>
+ def create
+   @model = Model.find params[:id]
+   picture = Picture.new params[:picture]
+   if picture.save
+     sortable_pictures = picture.sortable_pictures.new
+     sortable_picture.picturable = @model
+     sortable_picture.save
+   end
+ end
+</code>
+</pre>
+
+h2. View
+
+<pre>
+<code>
+ <% @model.pictures.each do |picture| %>
+   <%= image_tag(picture.public_filename :thumb) %>
+ <% end %>
+</code>
+</pre>
+
+h1. Configuration file
+
+in RAILS_ROOT + config/sortable_pictures.yml
+<pre>  
+<code>
+  storage: :file_system
+  file_system_path: 'public/images/sortable_pictures'
+  content_type: 'image'
+  thumbnails: 
+    :big: '500x500', 
+    :normal: '200x200' 
+    :small: '100x100'
+    :thumb: '50x50'
+</code>
+</pre>

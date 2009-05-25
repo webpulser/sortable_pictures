@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sortable_pictures}
-  s.version = "1.0.0"
+  s.version = "1.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Cyril LEPAGNOT"]
@@ -10,15 +10,14 @@ Gem::Specification.new do |s|
   s.description = %q{With sortables pictures Rails plugin you can have pictures with tags, comments and ordering.}
   s.email = %q{cyril.lepagnot@webpulser.com}
   s.files    = ["LICENSE", 
-    "README",
-    "sortable_pictures.gemspec", 
+    "README.textile",
     "init.rb",
     "lib/sortable_pictures.rb", 
     "lib/picture.rb",
     "lib/sortable_picture.rb",
     "lib/tasks/update_thumbnails.rake"]
   s.has_rdoc = true
-  s.homepage = "http://github.com/qtousart/sortable_pictures"
+  s.homepage = "http://github.com/webpulser/sortable_pictures"
   s.rdoc_options = ["--inline-source", "--charset=UTF-8"]
   s.rubyforge_project = %q{sortable_pictures}
   s.summary = %q{Polymorphic and sortables pictures Rails plugin.}
